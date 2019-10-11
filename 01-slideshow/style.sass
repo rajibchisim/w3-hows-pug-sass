@@ -1,0 +1,69 @@
+*
+    padding: 0
+    margin: 0
+body
+    font-family: Arial, Helvetica, sans-serif
+img
+    display: block
+.container
+    margin-left: auto
+    margin-right: auto
+    max-width: 1000px
+    padding: 16px
+.slides
+    position: relative
+.slide
+    display: none
+    img
+        max-width: 100%
+.number,.caption
+    position: absolute
+    color: white
+.number
+    padding: 8px
+    top: 0
+.caption
+    bottom: 4%
+    width: 100%
+    text-align: center
+.slide-selectors
+    margin-left: auto
+    margin-right: auto
+    text-align: center
+.selector
+    display: inline-block
+    width: 16px
+    height: 16px
+    background-color: #BBBBBB
+    border-radius: 50%
+    margin: 4px
+    cursor: pointer    
+.selected
+    background-color: #717171
+.active
+    display: block
+a 
+    color: white
+    font-size: 21px
+    text-decoration: none
+    padding: 8px
+    background-color: rgba(0, 0, 0, .2)
+    position: absolute
+    cursor: pointer
+    top: 50%
+    transform: translateY(-50%)
+    &:active
+        background-color: rgba(0, 0, 0, .5)
+.l-arrow    
+    left: 0
+.r-arrow
+    right: 0
+
+.fade
+    animation-name: fade
+    animation-duration: 1.5s
+@keyframes fade
+  from
+      opacity: .4
+  to
+      opacity: 1
