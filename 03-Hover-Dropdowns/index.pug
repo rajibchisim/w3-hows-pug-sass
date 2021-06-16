@@ -1,0 +1,35 @@
+doctype
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        //- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags
+        meta(name='description', content='')
+        meta(name='author', content='')
+        title Hover dropdowns
+        style.
+            .dropdown button {
+                padding: 8px 16px;
+            }
+            .dropdown button:hover + div > ul{
+                display: block;               
+            }
+            .dropdown ul {
+                padding: 0;
+                margin: 0;
+                display: none;
+            }
+            .dropdown ul li {
+                padding: 8px 16px;
+            }
+    body
+        div.container
+            div.dropdown
+                button Hover On Me
+                div: ul
+                    li Item One
+                    li Item Two
+                    li Item Three
+                    li Item Four
+                    li Item Five

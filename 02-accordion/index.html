@@ -1,0 +1,61 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Collapsibles/Accordion</title><style>* { 
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+    padding: 16px 32px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.accordion {
+    width: 100%;
+    padding: 16px 16px;
+    font-size: 16px;
+    border: 0;
+    text-align: left;
+    outline: none;
+}
+.accordion:after {
+    content: '+';
+    font-size: 20px;
+    float: right;
+}
+.active:after {
+    content: '−';
+    font-size: 20px;
+}
+.accordion:hover, .accordion:active {
+    background-color: gray;
+}
+.panel p {
+    padding: 16px;
+}
+.panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    border-bottom: 1px solid light-gray;
+}
+</style></head><body class="container"><button class="accordion">Section 1</button><div class="panel"><p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, 
+consectetur adipisicing elit. Reiciendis, quis. Lorem ipsum dolor sit amet. 
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae corrupti pariatur laudantium aliquid, quae, expedita itaque assumenda magnam velit quo incidunt praesentium sed ex alias numquam reprehenderit reiciendis cupiditate veniam!.
+</p></div><button class="accordion">Section 2</button><div class="panel"><p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, laborum?
+consectetur adipisicing elit. Reiciendis, quis. Lorem ipsum dolor sit amet.
+</p></div><button class="accordion">Section 2</button><div class="panel"><p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, 
+consectetur adipisicing elit. Reiciendis, quis. Lorem ipsum dolor sit amet. 
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo eum eveniet excepturi? Dicta, placeat consequatur dolorem perferendis ducimus porro ipsam consequuntur. Amet sunt asperiores corrupti voluptatibus, quos necessitatibus, totam cum rem beatae inventore enim tenetur tempore suscipit.
+</p></div><script>const buttons = document.querySelectorAll('.accordion')
+buttons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        let bt = e.target
+        bt.classList.toggle('active')
+        let panel = bt.nextElementSibling
+        if(panel.style.maxHeight){
+            panel.style.maxHeight = null;
+        }
+        else {
+            panel.style.maxHeight = panel.scrollHeight + 'px';
+        }
+    })
+})</script></body></html>
